@@ -12,13 +12,17 @@ He was of course talking about TDD, but I was bored and get inspired to build
 this little toy.
 
 Hardware schematics, firmware and host software is available in [this Github
-repo](https://github.com/alx741/tdd_traffic-light).
+repo](https://github.com/alx741/tdd_traffic-light). Along with information on
+how to compile and use.
 
 > This is a physical toy traffic light to be used with software development TDD
 > (and testing in general) tools. It will not boost your productivity nor make
 > you a better programmer or TDD practitioner, but it looks cool :)
 
 Lets explain how it works, it's very simple:
+
+
+## Hardware
 
 The **atmega328p** AVR microcontroller is very popular and cheap, but if you buy
 them on Ebay for example, chances are it comes with an Arduino bootloader, which
@@ -29,6 +33,23 @@ default ones:
     # avrdude -p m328p -c usbasp -U lfuse:w:0x62:m -U hfuse:w:0xd9:m
 
 Now we are using the internal 1MHz oscillator, perfect!
+
+I don't have a PCB yet (although it should be pretty easy as I made the circuit
+schematic using *kicad*) but the circuit is small and simple so it's easy to
+build it with prototype PCB. Additionally I added some small neodymium magnets
+in the back to stick it easily close to my monitors.
+
+![](img1.jpg)
+![](img2.jpg)
+![](img3.jpg)
+![](img4.jpg)
+![](img5.jpg)
+![](img6.jpg)
+![](img7.jpg)
+![](img8.jpg)
+
+
+## Software
 
 The firmware is no more than UART boilerplate with a baud rate of `4800` so it
 is stable with the 1MHz clock speed.
